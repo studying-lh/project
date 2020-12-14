@@ -1,0 +1,18 @@
+1.     准备
+ubuntu16.04  --64位
+arm-linux-gnueabi-5.4.0.tar.xz  --交叉编译工具
+Qt-Embedded-5.7.0.tar.xz ---arm版本Qt
+
+2.     安装交叉编译工具
+(1)     arm-linux-gnueabi-5.4.0.tar.xz 拷贝到linux系统 /usr/local/arm目录下（如果没有这个目录就创建）解压
+(2)     sudo  tar  -xf  arm-linux-gnueabi-5.4.0.tar.xz
+(3)     解压后 得到 arm-linux-gnueabi-5.4.0.tar.xz   usr
+(4)     把交叉工具移动到/usr/local/arm      执行sudo  mv  usr/local/arm/5.4.0  ./
+(5)     设置环境变量 打开~/.bashrc  在最后面添加
+export PATH=/usr/local/arm/5.4.0/usr/bin:$PATH
+         或者/etc/bash.bashrc中设置也行
+3.        安装arm版本Qt库
+(1)     把Qt-Embedded-5.7.0.tar.xz拷贝到/usr/local目录下（必须是这个目录）解压
+
+4.      交叉编译程序到开发板
+        使用qmake-->make  编译你的工程，然后把程序下载到开发板运行，qmake在刚才解压的库目录下面
